@@ -13,14 +13,14 @@ The experiments use the steady two-dimensional Kovasznay flow and the unsteady t
 
 ```text
 src/                 implementation of models, residuals, optimizers, and utilities
-notebooks/           training and result-generation notebooks
-runs/                recorded experiment outputs used for the report figures and tables
-docs/                report PDF/source, bibliography, generated figures, and table rows
+notebooks/           train the models and generate results
+runs/                outputs of the recorded experiment used for the figures and tables
+docs/                generated figures and table rows
 envs/gnng-lab.yml    Micromamba environment file
 pyproject.toml       editable Python package configuration
 ```
 
-The final report is available at `docs/kh_practical_work.pdf`.
+The accompanying report is submitted separately and is not included in this public repository.
 
 ## Results at a Glance
 
@@ -30,7 +30,7 @@ The main experiments compare Adam, L-BFGS, chunked-direct GNNG, and matrix-free 
 
 ![Beltrami convergence](docs/figures/beltrami_convergence.png)
 
-On both benchmarks, the GNNG variants reach substantially lower relative `L2` errors than Adam and L-BFGS. The report contains the full discussion, including ablations and implementation details.
+On both benchmarks, the GNNG variants reach substantially lower relative `L2` errors than Adam and L-BFGS. The recorded runs also include the ablations used in the accompanying report.
 
 ## Setup
 
@@ -77,11 +77,12 @@ notebooks/kovasznay_train.ipynb
 notebooks/beltrami_train.ipynb
 ```
 
-The main experiments were run on an NVIDIA GeForce RTX 4090 with 24 GB of VRAM. Each main training run uses a wall-clock budget of 12 minutes. Full reproduction is therefore GPU-expensive.
+The main experiments were run on an NVIDIA GeForce RTX 4090 with 24 GB of VRAM. Each training run uses a wall-clock budget of 12 minutes.
 
 ## Notes on the Implementation
 
-The implementation uses fixed collocation sets and double precision for the main experiments. For efficient residual evaluation, the code includes structured propagation of first- and second-order input derivatives through the neural network. This avoids repeatedly constructing expensive automatic-differentiation graphs for the spatial derivatives required by the Navier-Stokes residuals.
+The implementation uses fixed collocation sets and double precision for the main experiments. For efficient residual evaluation, the code includes structured propagation of first- and second-order input derivatives through the neural network. This avoids repeatedly constructing expensive automatic-differentiation graphs for the spatial derivatives.
 
-The matrix-free GNNG variant uses a reduced Gauss-Newton matrix as a preconditioner for conjugate gradients. The damping rules, CG stopping tolerances, and reduced preconditioner sizes used in the reported experiments are documented in the report and in the saved run configurations.
+The matrix-free GNNG variant uses a reduced Gauss-Newton matrix as a preconditioner for conjugate gradients. The damping rules, CG stopping tolerances, and reduced preconditioner sizes used in the experiments are documented in the report and the stored runs.
+
 
