@@ -85,6 +85,3 @@ The implementation uses fixed collocation sets and double precision for the main
 
 The matrix-free GNNG variant uses a reduced Gauss-Newton matrix as a preconditioner for conjugate gradients. The damping rules, CG stopping tolerances, and reduced preconditioner sizes used in the reported experiments are documented in the report and in the saved run configurations.
 
-## Reference
-
-The implementation and experiments revisit the GNNG method of Jnini, Vella, and Zeinhofer. See the report in `docs/kh_practical_work.pdf` for the full discussion, references, and experimental results.
