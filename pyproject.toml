@@ -1,0 +1,31 @@
+[build-system]
+requires = ["setuptools>=61", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "revisiting-gnng"
+version = "0.1.0"
+description = "PyTorch implementation and experiments for revisiting Gauss-Newton natural gradient descent for PINNs"
+requires-python = ">=3.12"
+dependencies = [
+    "numpy",
+    "pandas",
+    "matplotlib",
+    "psutil",
+    "torch",
+]
+
+[tool.setuptools]
+package-dir = {"" = "src"}
+py-modules = [
+    "diffops",
+    "models",
+    "optimizers",
+    "structured_derivatives",
+    "train",
+    "update_directions",
+    "utils",
+]
+
+[tool.setuptools.packages.find]
+where = ["src"]

@@ -1,0 +1,21 @@
+name: gnng-lab
+channels:
+  - conda-forge
+dependencies:
+  - python=3.12
+  - numpy
+  - pandas
+  - matplotlib
+  - ipykernel
+  - psutil
+  - pip
+
+# PyTorch is installed separately to choose the CUDA build explicitly.
+#
+# GPU / CUDA 12.8:
+#   pip install torch==2.11.0 --index-url https://download.pytorch.org/whl/cu128
+#
+# Create:
+#   micromamba env create -f envs/gnng-lab.yml
+#   micromamba activate gnng-lab
+
