@@ -1,0 +1,104 @@
+{
+  "run_id": "adam_seed_0030373",
+  "sweep_name": "v6_rtx4090",
+  "problem_name": "kovasznay",
+  "experiment_name": "adam",
+  "seed": 30373,
+  "status": "finished",
+  "stop_reason": "time_budget",
+  "started_at": "2026-04-21T09:27:10+02:00",
+  "finished_at": "2026-04-21T09:39:10+02:00",
+  "wall_time_s": 720.2437660079449,
+  "completed_steps": 69200,
+  "system": {
+    "device": "cuda",
+    "python_version": "3.12.13",
+    "torch_version": "2.11.0+cu128",
+    "platform": "Linux-6.8.0-106-generic-x86_64-with-glibc2.39",
+    "hostname": "453a9b852a51",
+    "cuda_device_name": "NVIDIA GeForce RTX 4090",
+    "git_commit": "8d40e08134b8c763022c4e024599dfeaf053ccc7",
+    "dtype": "torch.float64"
+  },
+  "model": {
+    "architecture": "MLP",
+    "layer_dims": [
+      2,
+      50,
+      50,
+      50,
+      50,
+      3
+    ],
+    "activation": "tanh",
+    "init": "xavier_uniform",
+    "num_parameters": 7953
+  },
+  "problem": {
+    "name": "kovasznay",
+    "domain": {
+      "x_min": -0.5,
+      "x_max": 1.0,
+      "y_min": -0.5,
+      "y_max": 1.5
+    },
+    "cfg": {
+      "Re": 40.0,
+      "lambda_bc": 1.0
+    },
+    "seed": 30373
+  },
+  "train": {
+    "steps_requested": 100000,
+    "log_every": 200,
+    "time_constraint_s": 720.0,
+    "nx_int": 51,
+    "ny_int": 51,
+    "n_bnd": 100,
+    "nx_val": 170,
+    "ny_val": 153,
+    "n_interior_points": 2601,
+    "n_boundary_points": 400,
+    "n_validation_points": 26010
+  },
+  "optimizer": {
+    "name": "adam",
+    "lr": 0.001,
+    "backend": null,
+    "kwargs": {}
+  },
+  "resources": {
+    "peak_gpu_mem_mb": 214.5419921875
+  },
+  "final_metrics": {
+    "run_id": "adam_seed_0030373",
+    "sweep_name": "v6_rtx4090",
+    "problem_name": "kovasznay",
+    "experiment_name": "adam",
+    "seed": 30373,
+    "step": 69200,
+    "wall_time_s": 720.2437660079449,
+    "loss": 2.3159088472206486e-05,
+    "pde": 1.4675713634968928e-05,
+    "bc": 8.483374837237558e-06,
+    "rel_l2_u": 0.0027295469198561923,
+    "rel_l2_v": 0.00514607665277908,
+    "rel_l2_p": 0.0013803697038611332,
+    "rel_l2_mean": 0.0030853310921654686,
+    "lr": 0.000217149159911189,
+    "gpu_peak_mem_mb": 214.5419921875,
+    "gn.backend": null,
+    "gn.cg_iters": null,
+    "gn.step_size": null,
+    "gn.damping": null
+  },
+  "best_metrics": {
+    "selection_metric": "rel_l2_mean",
+    "best_step": 68400,
+    "best_wall_time_s": 711.8868384077214,
+    "rel_l2_u": 0.0004941920515051388,
+    "rel_l2_v": 0.0026689027627593664,
+    "rel_l2_p": 0.001140880578210152,
+    "rel_l2_mean": 0.001434658464158219
+  }
+}

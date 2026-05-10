@@ -1,0 +1,118 @@
+{
+  "run_id": "gnng_matfree_v0_seed_0016567",
+  "sweep_name": "v6_rtx4090",
+  "problem_name": "kovasznay",
+  "experiment_name": "gnng_matfree_v0",
+  "seed": 16567,
+  "status": "finished",
+  "stop_reason": "time_budget",
+  "started_at": "2026-04-21T11:51:17+02:00",
+  "finished_at": "2026-04-21T12:03:17+02:00",
+  "wall_time_s": 720.5773150823079,
+  "completed_steps": 1236,
+  "system": {
+    "device": "cuda",
+    "python_version": "3.12.13",
+    "torch_version": "2.11.0+cu128",
+    "platform": "Linux-6.8.0-106-generic-x86_64-with-glibc2.39",
+    "hostname": "453a9b852a51",
+    "cuda_device_name": "NVIDIA GeForce RTX 4090",
+    "git_commit": "8d40e08134b8c763022c4e024599dfeaf053ccc7",
+    "dtype": "torch.float64"
+  },
+  "model": {
+    "architecture": "MLP",
+    "layer_dims": [
+      2,
+      50,
+      50,
+      50,
+      50,
+      3
+    ],
+    "activation": "tanh",
+    "init": "xavier_uniform",
+    "num_parameters": 7953
+  },
+  "problem": {
+    "name": "kovasznay",
+    "domain": {
+      "x_min": -0.5,
+      "x_max": 1.0,
+      "y_min": -0.5,
+      "y_max": 1.5
+    },
+    "cfg": {
+      "Re": 40.0,
+      "lambda_bc": 1.0
+    },
+    "seed": 16567
+  },
+  "train": {
+    "steps_requested": 100000,
+    "log_every": 3,
+    "time_constraint_s": 720.0,
+    "nx_int": 51,
+    "ny_int": 51,
+    "n_bnd": 100,
+    "nx_val": 170,
+    "ny_val": 153,
+    "n_interior_points": 2601,
+    "n_boundary_points": 400,
+    "n_validation_points": 26010
+  },
+  "optimizer": {
+    "name": "gauss_newton",
+    "lr": 1.0,
+    "backend": "matfree",
+    "kwargs": {
+      "backend": "matfree",
+      "use_cg_precond": true,
+      "precond_nx_int": 20,
+      "precond_ny_int": 20,
+      "precond_n_bnd": 25,
+      "damping_cap": 0.0001,
+      "damping_floor": 1e-07,
+      "damping_scale": 0.0001,
+      "cg_rtol": 0.001,
+      "cg_atol": 1e-07,
+      "cg_maxiter": 100,
+      "do_line_search": true,
+      "line_search_steps": 31
+    }
+  },
+  "resources": {
+    "peak_gpu_mem_mb": 1536.81298828125
+  },
+  "final_metrics": {
+    "run_id": "gnng_matfree_v0_seed_0016567",
+    "sweep_name": "v6_rtx4090",
+    "problem_name": "kovasznay",
+    "experiment_name": "gnng_matfree_v0",
+    "seed": 16567,
+    "step": 1236,
+    "wall_time_s": 720.5773150823079,
+    "loss": 1.01223313911596e-11,
+    "pde": null,
+    "bc": null,
+    "rel_l2_u": 4.6436003919631587e-07,
+    "rel_l2_v": 3.2333589788546985e-06,
+    "rel_l2_p": 1.4052520010795753e-06,
+    "rel_l2_mean": 1.7009903397101966e-06,
+    "lr": 1.0,
+    "gpu_peak_mem_mb": 1536.81298828125,
+    "gn.backend": "matfree",
+    "gn.cg_iters": 1,
+    "gn.step_size": 1.0,
+    "gn.damping": 1e-07
+  },
+  "best_metrics": {
+    "selection_metric": "rel_l2_mean",
+    "best_step": 1236,
+    "best_wall_time_s": 720.5773150823079,
+    "rel_l2_u": 4.6436003919631587e-07,
+    "rel_l2_v": 3.2333589788546985e-06,
+    "rel_l2_p": 1.4052520010795753e-06,
+    "rel_l2_mean": 1.7009903397101966e-06
+  }
+}

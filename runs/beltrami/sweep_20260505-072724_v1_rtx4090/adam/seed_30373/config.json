@@ -1,0 +1,73 @@
+{
+  "run_id": "adam_seed_0030373",
+  "sweep_name": "v1_rtx4090",
+  "problem_name": "beltrami",
+  "experiment_name": "adam",
+  "seed": 30373,
+  "started_at": "2026-05-05T08:15:31+02:00",
+  "git_commit": "8f160b5f8ba26ec7100d0f64b76ce0fb475738c4",
+  "device": "cuda",
+  "dtype": "torch.float64",
+  "model": {
+    "layer_dims": [
+      4,
+      50,
+      50,
+      50,
+      50,
+      4
+    ],
+    "activation": "tanh",
+    "init": "xavier_uniform"
+  },
+  "optimizer": {
+    "name": "adam",
+    "lr": 0.001,
+    "cosine_annealing": true,
+    "kwargs": {}
+  },
+  "train": {
+    "steps": 100000,
+    "log_every": 25,
+    "time_constraint_s": 720.0,
+    "seed": 30373,
+    "dtype": "torch.float64",
+    "nx_int": 51,
+    "ny_int": 51,
+    "n_bnd": 676,
+    "nx_val": 100,
+    "ny_val": 100,
+    "resample_train_batch_each_step": false
+  },
+  "problem": {
+    "name": "beltrami",
+    "domain": {
+      "x_min": -1.0,
+      "x_max": 1.0,
+      "y_min": -1.0,
+      "y_max": 1.0,
+      "z_min": -1.0,
+      "z_max": 1.0,
+      "t_min": 0.0,
+      "t_max": 1.0
+    },
+    "cfg": {
+      "Re": 1.0,
+      "a": 1.0,
+      "d": 1.0,
+      "lambda_bc": 1.0,
+      "lambda_ic": 1.0,
+      "include_final_time_bc": true,
+      "lambda_final": 1.0
+    },
+    "seed": 30373
+  },
+  "system": {
+    "device": "cuda",
+    "python_version": "3.12.13",
+    "torch_version": "2.11.0+cu128",
+    "platform": "Linux-6.8.0-110-generic-x86_64-with-glibc2.39",
+    "hostname": "2767982b4378",
+    "cuda_device_name": "NVIDIA GeForce RTX 4090"
+  }
+}

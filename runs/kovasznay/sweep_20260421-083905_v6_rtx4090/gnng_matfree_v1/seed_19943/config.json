@@ -1,0 +1,77 @@
+{
+  "run_id": "gnng_matfree_v1_seed_0019943",
+  "sweep_name": "v6_rtx4090",
+  "problem_name": "kovasznay",
+  "experiment_name": "gnng_matfree_v1",
+  "seed": 19943,
+  "started_at": "2026-04-23T18:09:11+02:00",
+  "git_commit": "8a4198a8552cb9005c16f85b6177c55baf4eb96f",
+  "device": "cuda",
+  "dtype": "torch.float64",
+  "model": {
+    "layer_dims": [
+      2,
+      50,
+      50,
+      50,
+      50,
+      3
+    ],
+    "activation": "tanh",
+    "init": "xavier_uniform"
+  },
+  "optimizer": {
+    "name": "gauss_newton",
+    "lr": 1.0,
+    "cosine_annealing": false,
+    "kwargs": {
+      "backend": "matfree",
+      "use_cg_precond": true,
+      "precond_nx_int": 20,
+      "precond_ny_int": 20,
+      "precond_n_bnd": 25,
+      "damping_cap": 1e-05,
+      "damping_floor": 1e-16,
+      "damping_scale": 1.0,
+      "cg_rtol": 0.01,
+      "cg_atol": 0.0,
+      "cg_maxiter": 100,
+      "do_line_search": true,
+      "line_search_steps": 31
+    }
+  },
+  "train": {
+    "steps": 100000,
+    "log_every": 3,
+    "time_constraint_s": 720,
+    "seed": 19943,
+    "dtype": "torch.float64",
+    "nx_int": 51,
+    "ny_int": 51,
+    "n_bnd": 100,
+    "nx_val": 170,
+    "ny_val": 153
+  },
+  "problem": {
+    "name": "kovasznay",
+    "domain": {
+      "x_min": -0.5,
+      "x_max": 1.0,
+      "y_min": -0.5,
+      "y_max": 1.5
+    },
+    "cfg": {
+      "Re": 40.0,
+      "lambda_bc": 1.0
+    },
+    "seed": 19943
+  },
+  "system": {
+    "device": "cuda",
+    "python_version": "3.12.13",
+    "torch_version": "2.11.0+cu128",
+    "platform": "Linux-6.8.0-85-generic-x86_64-with-glibc2.39",
+    "hostname": "dbd57dafb62d",
+    "cuda_device_name": "NVIDIA GeForce RTX 4090"
+  }
+}

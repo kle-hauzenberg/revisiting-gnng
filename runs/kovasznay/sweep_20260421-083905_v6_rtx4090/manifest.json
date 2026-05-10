@@ -1,0 +1,48 @@
+{
+  "problem_name": "kovasznay",
+  "created_at": "2026-04-21T06:39:05",
+  "seeds": [
+    5246,
+    16567,
+    19943,
+    29393,
+    30373
+  ],
+  "experiment_names": [
+    "adam",
+    "lbfgs",
+    "gnng_dense_v0",
+    "gnng_matfree_v0",
+    "gnng_dense_v1",
+    "gnng_matfree_v1",
+    "gnng_matfree_v2"
+  ],
+  "shared_config": {
+    "model": {
+      "layer_dims": [
+        2,
+        50,
+        50,
+        50,
+        50,
+        3
+      ],
+      "activation": "tanh",
+      "init": "xavier_uniform"
+    },
+    "train": {
+      "steps": 100000,
+      "log_every": 100,
+      "time_constraint_s": 720,
+      "seed": 0,
+      "dtype": "torch.float64",
+      "nx_int": 51,
+      "ny_int": 51,
+      "n_bnd": 100,
+      "nx_val": 170,
+      "ny_val": 153
+    },
+    "dtype": "torch.float64",
+    "device": "cuda"
+  }
+}
