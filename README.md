@@ -7,7 +7,7 @@ The code compares two realizations of Gauss-Newton natural gradient descent (GNN
 - **chunked-direct GNNG**, which assembles the Gauss-Newton matrix from residual-Jacobian blocks and solves the resulting system directly;
 - **matrix-free GNNG**, which applies the Gauss-Newton matrix through Jacobian-vector and vector-Jacobian products and solves the system by conjugate gradients.
 
-The experiments use the steady two-dimensional Kovasznay flow and the unsteady three-dimensional Beltrami flow. Adam and L-BFGS are included as baseline optimizers.
+The experiments are based on the steady two-dimensional Kovasznay flow and the unsteady three-dimensional Beltrami flow. Adam and L-BFGS are included as baseline optimizers.
 
 All experiments were run on an NVIDIA GeForce RTX 4090 with 24 GB of VRAM.
 
@@ -34,7 +34,7 @@ The main experiments compare Adam, L-BFGS, chunked-direct GNNG, and matrix-free 
 **Beltrami flow:**
 ![Beltrami convergence](docs/figures/beltrami_convergence.png)
 
-On both benchmarks, the GNNG variants reach substantially lower relative `L2` errors than Adam and L-BFGS. The recorded runs also include the ablations used in the accompanying paper.
+On both benchmarks, the GNNG variants reach substantially lower relative `L2` errors than Adam and L-BFGS. The recorded experiments in `runs/` also include the ablations used in the accompanying paper.
 
 ## Setup
 
@@ -45,13 +45,13 @@ micromamba env create -f envs/gnng-lab.yml
 micromamba activate gnng-lab
 ```
 
-Install PyTorch. The reported experiments were run with PyTorch `2.11.0+cu128`:
+Install PyTorch `2.11.0+cu128`:
 
 ```bash
 pip install torch==2.11.0 --index-url https://download.pytorch.org/whl/cu128
 ```
 
-Install this repository in editable mode:
+To install this repository in editable mode:
 
 ```bash
 pip install -e .
@@ -65,14 +65,14 @@ export CUBLAS_WORKSPACE_CONFIG=:4096:8
 
 ## Reproducing the Figures and Tables
 
-The reported run outputs are included under `runs/`. To regenerate the figures and LaTeX table rows from these recorded runs, execute:
+These notebooks
 
 ```text
 notebooks/kovasznay_results.ipynb
 notebooks/beltrami_results.ipynb
 ```
 
-These notebooks write figures to `docs/figures/` and LaTeX table rows to `docs/tables/`. They point to the recorded sweeps used for the figures above:
+write figures to `docs/figures/` and LaTeX table rows to `docs/tables/`. They currently point to the recorded experiments used for the figures above:
 
 ```text
 runs/kovasznay/sweep_20260421-083905_v6_rtx4090
@@ -93,4 +93,4 @@ Running a training notebook creates a new timestamped sweep directory under `run
 
 The implementation uses fixed collocation sets and double precision. For efficient residual evaluation, the code includes structured propagation of first- and second-order input derivatives through the neural network. This avoids repeatedly constructing expensive automatic-differentiation graphs for the spatial derivatives.
 
-Both variants use a simple adaptive damping factor to regularize the Gauss-Newton system. The matrix-free GNNG variant also uses a preconditioner based on a reduced collocation set for the iterative conjugate gradient (CG) method.
+Both variants use a simple adaptive damping factor to regularize the Gauss-Newton system. The matrix-free GNNG variant also uses a preconditioner based on a reduced collocation set for conjugate gradients.

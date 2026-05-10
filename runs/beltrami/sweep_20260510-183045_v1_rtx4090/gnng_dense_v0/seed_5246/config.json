@@ -1,0 +1,80 @@
+{
+  "run_id": "gnng_dense_v0_seed_0005246",
+  "sweep_name": "v1_rtx4090",
+  "problem_name": "beltrami",
+  "experiment_name": "gnng_dense_v0",
+  "seed": 5246,
+  "started_at": "2026-05-10T18:32:53+02:00",
+  "git_commit": "7ebd678bf9c2c79382648077c294166043fcfc95",
+  "device": "cuda",
+  "dtype": "torch.float64",
+  "model": {
+    "layer_dims": [
+      4,
+      50,
+      50,
+      50,
+      50,
+      4
+    ],
+    "activation": "tanh",
+    "init": "xavier_uniform"
+  },
+  "optimizer": {
+    "name": "gauss_newton",
+    "lr": 1.0,
+    "cosine_annealing": false,
+    "kwargs": {
+      "backend": "dense",
+      "damping_cap": 0.001,
+      "damping_floor": 1e-07,
+      "damping_scale": 6e-05,
+      "do_line_search": true,
+      "line_search_steps": 31
+    }
+  },
+  "train": {
+    "steps": 100000,
+    "log_every": 1,
+    "time_constraint_s": 60.0,
+    "seed": 5246,
+    "dtype": "torch.float64",
+    "nx_int": 51,
+    "ny_int": 51,
+    "n_bnd": 676,
+    "nx_val": 100,
+    "ny_val": 100,
+    "resample_train_batch_each_step": false
+  },
+  "problem": {
+    "name": "beltrami",
+    "domain": {
+      "x_min": -1.0,
+      "x_max": 1.0,
+      "y_min": -1.0,
+      "y_max": 1.0,
+      "z_min": -1.0,
+      "z_max": 1.0,
+      "t_min": 0.0,
+      "t_max": 1.0
+    },
+    "cfg": {
+      "Re": 1.0,
+      "a": 1.0,
+      "d": 1.0,
+      "lambda_bc": 1.0,
+      "lambda_ic": 1.0,
+      "include_final_time_bc": true,
+      "lambda_final": 1.0
+    },
+    "seed": 5246
+  },
+  "system": {
+    "device": "cuda",
+    "python_version": "3.12.12",
+    "torch_version": "2.11.0+cu128",
+    "platform": "Linux-6.18.7-76061807-generic-x86_64-with-glibc2.39",
+    "hostname": "pop-os",
+    "cuda_device_name": "NVIDIA GeForce RTX 5060 Laptop GPU"
+  }
+}

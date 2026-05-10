@@ -1,0 +1,150 @@
+{
+  "run_id": "lbfgs_seed_0005246",
+  "sweep_name": "v1_rtx4090",
+  "problem_name": "beltrami",
+  "experiment_name": "lbfgs",
+  "seed": 5246,
+  "status": "finished",
+  "stop_reason": "time_budget",
+  "started_at": "2026-05-10T18:31:48+02:00",
+  "finished_at": "2026-05-10T18:32:53+02:00",
+  "wall_time_s": 64.60959036700001,
+  "completed_steps": 18,
+  "system": {
+    "device": "cuda",
+    "python_version": "3.12.12",
+    "torch_version": "2.11.0+cu128",
+    "platform": "Linux-6.18.7-76061807-generic-x86_64-with-glibc2.39",
+    "hostname": "pop-os",
+    "cuda_device_name": "NVIDIA GeForce RTX 5060 Laptop GPU",
+    "git_commit": "7ebd678bf9c2c79382648077c294166043fcfc95",
+    "dtype": "torch.float64"
+  },
+  "model": {
+    "architecture": "MLP",
+    "layer_dims": [
+      4,
+      50,
+      50,
+      50,
+      50,
+      4
+    ],
+    "activation": "tanh",
+    "init": "xavier_uniform",
+    "num_parameters": 8104
+  },
+  "problem": {
+    "name": "beltrami",
+    "domain": {
+      "x_min": -1.0,
+      "x_max": 1.0,
+      "y_min": -1.0,
+      "y_max": 1.0,
+      "z_min": -1.0,
+      "z_max": 1.0,
+      "t_min": 0.0,
+      "t_max": 1.0
+    },
+    "cfg": {
+      "Re": 1.0,
+      "a": 1.0,
+      "d": 1.0,
+      "lambda_bc": 1.0,
+      "lambda_ic": 1.0,
+      "include_final_time_bc": true,
+      "lambda_final": 1.0
+    },
+    "seed": 5246
+  },
+  "train": {
+    "steps_requested": 100000,
+    "log_every": 3,
+    "time_constraint_s": 60.0,
+    "nx_int": 51,
+    "ny_int": 51,
+    "n_bnd": 676,
+    "nx_val": 100,
+    "ny_val": 100,
+    "n_validation_points": 10000,
+    "n_interior_points": 2601,
+    "n_boundary_points": 4056,
+    "n_initial_points": 676,
+    "n_final_points": 676
+  },
+  "optimizer": {
+    "name": "lbfgs",
+    "lr": 1.0,
+    "backend": null,
+    "kwargs": {
+      "max_iter": 20,
+      "history_size": 100,
+      "line_search_fn": "strong_wolfe",
+      "tolerance_grad": 1e-07,
+      "tolerance_change": 1e-09
+    }
+  },
+  "resources": {
+    "peak_gpu_mem_mb": 454.9453125
+  },
+  "metric_keys": [
+    "rel_l2_u",
+    "rel_l2_v",
+    "rel_l2_w",
+    "rel_l2_p",
+    "rel_l2_grad_p",
+    "rel_l2_mean",
+    "rel_l2_mean_gradp",
+    "rel_l2_u_t1",
+    "rel_l2_v_t1",
+    "rel_l2_w_t1",
+    "rel_l2_p_t1",
+    "rel_l2_mean_t1"
+  ],
+  "primary_metric": "rel_l2_mean",
+  "final_metrics": {
+    "run_id": "lbfgs_seed_0005246",
+    "sweep_name": "v1_rtx4090",
+    "problem_name": "beltrami",
+    "experiment_name": "lbfgs",
+    "seed": 5246,
+    "step": 18,
+    "wall_time_s": 64.60959036700001,
+    "loss": 0.008256798910913977,
+    "pde": 0.0032019677257969113,
+    "bc": 0.0025701498812450247,
+    "ic": 0.0015857188214715246,
+    "final": 0.0008989624824005174,
+    "lr": 1.0,
+    "gpu_peak_mem_mb": 454.9453125,
+    "rel_l2_u": 0.01998420731361649,
+    "rel_l2_v": 0.020532767793843776,
+    "rel_l2_w": 0.01965631276197327,
+    "rel_l2_p": 0.017815771031932857,
+    "rel_l2_mean": 0.0194972647253416,
+    "rel_l2_grad_p": 0.05014734582547443,
+    "rel_l2_mean_gradp": 0.02758015842372699,
+    "rel_l2_u_t1": 0.0397850994625689,
+    "rel_l2_v_t1": 0.041920444503435704,
+    "rel_l2_w_t1": 0.04215499072923067,
+    "rel_l2_p_t1": 0.04971366231192597,
+    "rel_l2_mean_t1": 0.043393549251790314
+  },
+  "best_metrics": {
+    "selection_metric": "rel_l2_mean",
+    "best_step": 18,
+    "best_wall_time_s": 64.60959036700001,
+    "rel_l2_u": 0.01998420731361649,
+    "rel_l2_v": 0.020532767793843776,
+    "rel_l2_w": 0.01965631276197327,
+    "rel_l2_p": 0.017815771031932857,
+    "rel_l2_grad_p": 0.05014734582547443,
+    "rel_l2_mean": 0.0194972647253416,
+    "rel_l2_mean_gradp": 0.02758015842372699,
+    "rel_l2_u_t1": 0.0397850994625689,
+    "rel_l2_v_t1": 0.041920444503435704,
+    "rel_l2_w_t1": 0.04215499072923067,
+    "rel_l2_p_t1": 0.04971366231192597,
+    "rel_l2_mean_t1": 0.043393549251790314
+  }
+}
