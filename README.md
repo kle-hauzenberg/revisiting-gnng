@@ -65,7 +65,7 @@ export CUBLAS_WORKSPACE_CONFIG=:4096:8
 
 ## Reproducing the Figures and Tables
 
-These notebooks
+The notebooks
 
 ```text
 notebooks/kovasznay_results.ipynb
@@ -79,14 +79,14 @@ runs/kovasznay/sweep_20260421-083905_v6_rtx4090
 runs/beltrami/sweep_20260505-072724_v1_rtx4090
 ```
 
-To rerun the training experiments, execute:
+To rerun the experiments, execute:
 
 ```text
 notebooks/kovasznay_train.ipynb
 notebooks/beltrami_train.ipynb
 ```
 
-Running a training notebook creates a new timestamped sweep directory under `runs/kovasznay/` or `runs/beltrami/`. To generate figures and table rows from a new sweep, open the corresponding result notebook and set `SWEEP_NAME` near the top of the notebook to the new sweep directory name. The result notebooks then regenerate the figures in `docs/figures/` and the LaTeX table rows in `docs/tables/`.
+Running a training notebook creates a new time-stamped sweep directory under `runs/kovasznay/` or `runs/beltrami/`. To generate figures and table rows from a new sweep, open the corresponding result notebook and set `SWEEP_NAME` near the top of the notebook to the new sweep directory name. The result notebooks then regenerate the figures in `docs/figures/` and the LaTeX table rows in `docs/tables/`.
 
 
 ## Notes on the Implementation
