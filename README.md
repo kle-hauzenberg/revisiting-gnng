@@ -28,9 +28,10 @@ The accompanying paper is not included in this public repository.
 
 The main experiments compare Adam, L-BFGS, chunked-direct GNNG, and matrix-free GNNG under the same 12-minute wall-clock budget.
 
-**Kovasznay flow**
+**Kovasznay flow:**
 ![Kovasznay convergence](docs/figures/kovasznay_convergence.png)
 
+**Beltrami flow:**
 ![Beltrami convergence](docs/figures/beltrami_convergence.png)
 
 On both benchmarks, the GNNG variants reach substantially lower relative `L2` errors than Adam and L-BFGS. The recorded runs also include the ablations used in the accompanying paper.
