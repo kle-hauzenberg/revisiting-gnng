@@ -1,8 +1,6 @@
-# Revisiting GNNG for PINNs
+# GNNG for PINNs
 
-This repository contains the PyTorch implementation and experiments for the paper **Revisiting Gauss-Newton Natural Gradient Descent for Physics-Informed Neural Networks**.
-
-The code compares two realizations of Gauss-Newton natural gradient descent (GNNG) for physics-informed neural networks:
+The code repository compares two variants of Gauss-Newton natural gradient descent (GNNG) as originally proposed by [Jnini, Vella, and Zeinhofer (2026)](https://arxiv.org/abs/2402.10680):
 
 - **chunked-direct GNNG**, which assembles the Gauss-Newton matrix from residual-Jacobian blocks and solves the resulting system directly;
 - **matrix-free GNNG**, which applies the Gauss-Newton matrix through Jacobian-vector and vector-Jacobian products and solves the system by conjugate gradients.
@@ -22,7 +20,7 @@ envs/gnng-lab.yml    Micromamba environment file
 pyproject.toml       editable Python package configuration
 ```
 
-The accompanying paper is not included in this public repository.
+The accompanying paper **Revisiting Gauss-Newton Natural Gradient Descent for Physics-Informed Neural Networks** is not included in this public repository.
 
 ## Results at a Glance
 
