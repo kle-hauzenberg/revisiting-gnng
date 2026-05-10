@@ -28,6 +28,7 @@ The accompanying paper is not included in this public repository.
 
 The main experiments compare Adam, L-BFGS, chunked-direct GNNG, and matrix-free GNNG under the same 12-minute wall-clock budget.
 
+**Kovasznay flow**
 ![Kovasznay convergence](docs/figures/kovasznay_convergence.png)
 
 ![Beltrami convergence](docs/figures/beltrami_convergence.png)
